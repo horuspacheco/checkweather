@@ -1,0 +1,32 @@
+<section class="container-general row justify-content-center">
+
+    <section class="col-4">
+        <div class="card bg-dark formulario">
+            <app-form-city [city]="city" [title_form]="title_form" [city_name] = "city_name" (getForecast)="getForecast($event)"></app-form-city>
+        </div>
+            
+    </section>
+
+    <section class="col-8">
+            <app-content-response 
+            [isLoading]="(forecast | async)?.isLoading"
+            [error]="(forecast | async)?.error"
+            [name]="(forecast | async)?.forecast?.city?.name"
+            [id]="(forecast | async)?.forecast?.list[3]?.weather[0]?.id"
+            [country] ="(forecast | async)?.forecast?.city?.country"
+            [temp] = "(forecast | async)?.forecast?.list[3]?.main?.temp"
+            [description] = "(forecast | async)?.forecast?.list[3]?.weather[0]?.description"
+            [lat] = "(forecast | async)?.forecast?.city?.coord?.lat"
+            [lon] ="(forecast | async)?.forecast?.city?.coord?.lon"
+            [pressure] ='(forecast | async)?.forecast?.list[3]?.main?.pressure'
+            [humidity] ='(forecast | async)?.forecast?.list[3]?.main?.humidity'
+            [date] ='(forecast | async)?.forecast?.list[3]?.dt_txt'
+            [forecast] = 'forecast_type'
+            [weather] = 'weather_type'
+            >
+        </app-content-response>
+
+    </section>
+
+</section>
+

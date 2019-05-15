@@ -1,0 +1,78 @@
+<ng-template [ngIf]="isLoading === true" >
+    <div class="loader">
+        <img src="assets/img/loader.gif" alt="">
+          <small>Loading</small>
+    </div>
+</ng-template>
+
+<ng-template [ngIf]="error == true">
+
+  <section class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Sorry!</h4>
+    <p>An error occurred while consulting.</p>
+    <hr>
+    <p class="mb-0">Please try again.</p>
+  </section>
+
+</ng-template>
+
+
+
+<ng-template [ngIf]="name == null || name == '' && !error == false">
+  <div  class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Welcome!</h4>
+    <p *ngIf="weather">You can check the state of the weather.</p>
+    <p *ngIf="forecast">You can check the state of the forecast.</p>
+
+    <hr>
+    <p class="mb-0">You just have to enter the name of your City.</p>
+  </div>
+</ng-template>
+
+
+
+<ng-template [ngIf]="name != null && name != ''">
+
+
+  <section class="row">
+    <section class="card col-12 info-weather">
+            <h4>
+                 Weather for {{name}} - {{country}} - <span>{{date}}</span> 
+            </h4> 
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="row icon">
+                        <div class="col-12 ">
+                            <h1 class="text-center">
+                                <i class="owf owf-{{id}} owf-2x owf-pull-left"></i>
+                                <span class="temperature">{{temp}}ºC</span> 
+                            </h1> 
+                        </div>
+  
+                    </div>    
+                    <div class="row description">
+                        <p class="upper bold text-right">
+                            {{description}}
+                        </p>
+                    </div>  
+                </div>
+                <div class="col-6">
+                        <ul class="list-group">
+                                <li class="list-group-item"><strong>Latitude: {{lat}}º</strong></li>
+                                <li class="list-group-item"><strong>Longitude: {{lon}}º</strong></li>
+                                <li class="list-group-item"><strong>Presure: {{pressure}}</strong></li>
+                                <li class="list-group-item"><strong>Humidity: {{humidity}}</strong></li>
+                              </ul>
+                            </div>
+            </div>     
+      </section>
+</section>
+
+
+
+
+
+
+</ng-template>
+

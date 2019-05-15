@@ -1,0 +1,27 @@
+
+
+<ng-template [ngIf]="city == true">
+	<img width="95%" src="assets/img/iconweather.png" alt="">
+	<h5 class="text-center text-white">{{title_form}}</h5>
+
+	<form class="form-inline" name="form1" #f="ngForm">
+	      <div class="input-group mb-3"> 
+					<input class="form-control" type="text" id="city" placeholder="City" [(ngModel)]="city_input" name="city_item" >
+	      	<input class="btn btn-primary" type="button" (click)="sendFormCity()" value="Check Weather">
+				</div>
+	</form>
+</ng-template>
+
+<ng-template [ngIf]="city == false">
+		<img width="95%" src="assets/img/iconforecast.png" alt="">
+	<h5 class="text-center text-white">{{title_form}}</h5>
+
+	<form class="form-inline" name="form2" #f="ngForm">
+	      <div class="input-group mb-3">
+		    <input class="form-control" type="text" id="city" placeholder="City Name" [(ngModel)]="city_input" name="city" size="8">
+			<button class="btn btn-primary" type="button" (click)="sendFormForecast()">Check Forecast</button>
+		</div>
+		
+		
+	</form>
+</ng-template>

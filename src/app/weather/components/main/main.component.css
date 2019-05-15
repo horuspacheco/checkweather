@@ -1,0 +1,14 @@
+.weather { 
+
+    margin: 5% 0 5% 0;
+}
+
+.container-main{
+
+    height: 90%;
+    background: rgb(15,187,222);
+}
+
+.container-main h1{
+    color:white;
+}

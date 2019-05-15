@@ -1,0 +1,55 @@
+<section class="container-general row justify-content-center">
+
+    <section class="col-4">
+        <div class="card bg-dark formulario">
+            <app-form-city [city]="true" [title_form]="title_form" [city_name] = 'city_name' (weatherCity)="getWeatherCity($event)"></app-form-city>
+        </div>
+            
+    </section>
+
+    <section class="col-8">
+        <app-content-response
+            [isLoading]="(weather | async)?.isLoading"
+            [error]="(weather | async)?.error"
+            [name]="(weather | async)?.weather?.name"
+            [id]="(weather | async)?.weather?.weather[0]?.id"
+            [country] ="(weather | async)?.weather?.sys?.country"
+            [temp] = "(weather | async)?.weather?.main?.temp"
+            [description] = "(weather | async)?.weather?.weather[0]?.description"
+            [lat] = "(weather | async)?.weather?.coord?.lat"
+            [lon] ="(weather | async)?.weather?.coord?.lon"
+            [pressure] = '(weather | async)?.weather?.main?.pressure'
+            [humidity] ='(weather | async)?.weather?.main?.pressure'
+            [weather] = 'weather_type'
+            [forecast] = 'forecast_type'
+            >
+
+        </app-content-response>
+    </section>   
+                
+                
+</section>                
+                
+     <!--        
+                
+                <section class="row justify-content-center">
+                    <div class="col-9">
+
+                        
+                
+                       
+                
+                        
+                            
+                       
+                        
+                    </div>
+                </section>
+   
+       
+
+-->   
+
+
+
+

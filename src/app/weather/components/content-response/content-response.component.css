@@ -1,0 +1,37 @@
+.loader { 
+
+    width: 10%;
+    position:fixed;
+    background: rgba(0,0,0,0.7);
+    padding: 3%;
+    margin-top: 10%;
+    border-radius: 10px;
+    margin-left:20%;
+    color:white;
+    font-weight: bold;
+    z-index: 10000;
+
+}
+
+.upper {
+    text-transform: capitalize;
+}
+
+.bold {
+    font-weight: bold;
+}
+.info-weather{
+    padding: 10%;
+    box-sizing: border-box;
+}
+.icon{
+    box-sizing: border-box;
+}
+.description {
+     margin-top: -4% !important;
+}
+
+.temperature {
+    margin-left : -10%;
+    padding-top: 20%;
+}
